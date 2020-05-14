@@ -1,4 +1,5 @@
 1. Code Description
+========================
 
 First stage of this project was to install and load the necessary
 packages:  
