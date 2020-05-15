@@ -89,6 +89,10 @@ names(joined_table) <- str_replace(names(joined_table), "Gyro", "Gyroscope")
 names(joined_table) <- str_replace(names(joined_table), "Mag", "Magnitude")
 names(joined_table) <- str_replace(names(joined_table), "BodyBody", "Body")
 
-tidy_means <- joined_table %>% group_by(Subject,Activity) %>% summarise_all(.funs = mean)
+# Create a second independent data set with the average of each variable for each activity and each subject.
+
+tidy_means <- joined_table %>%
+        group_by(Subject,Activity) %>% summarise_all(.funs = mean)
 
 write.table(tidy_means, file = "./data/tidy.txt", quote = FALSE, row.names = FALSE)
+        
